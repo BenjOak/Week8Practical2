@@ -84,3 +84,17 @@ The approach for calculating days between two dates, `firstDate` and `laterDate`
 Apply the steps above to find the days between the Bank Holiday and the current date. Use a calendar to check that the number of days is correct.
 
 10. Finally, display the number of days to the next Bank Holiday and the name and date of the Bank Holiday in the HTML. The [Date documentation](https://www.w3schools.com/jsref/jsref_obj_date.asp) describes methods that will help you format the date in a user-friendly way.
+
+## (Optional) Stage 3: Explore other APIs
+
+There are APIs for just about anything! Have a look through this list to see what is available:
+
+- [Free APIs](https://free-apis.github.io/#/)
+
+Be aware that APIs can be taken offline at any point so some of the APIs on that list may no longer work. Generally, APIs from known organisations or institutions are more reliable. E.g.:
+
+- [Art Institute of Chicago](https://api.artic.edu/docs/#introduction)
+- [The UK Goverment](https://www.data.gov.uk/)
+
+If you would like to use an API in your assessment, make sure it does not require authorization (no API key) and that CORS is available. CORS allows the browser to load resources hosted remotely.
+
