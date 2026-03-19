@@ -1,4 +1,4 @@
-# Week 8 Practical 1: Web APIs
+# Week 8 Practical 2: Web APIs
 
 This practical is about using asynchronous JavaScript to fetch data from web APIs. It is split into two stages. The first stage uses the async / await approach to call an API and the second uses a promise chain.
 
