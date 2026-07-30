@@ -1,0 +1,102 @@
+nav {
+    display: grid;
+    grid: 1fr 1fr 1fr/ 1fr 1fr;
+    background-color: rgb(0, 255, 255);
+    border-bottom: 5px solid;
+    border-bottom-color: rgb(0, 255, 0);
+}
+
+#epic-things-btn:hover, #dog-pog-btn:hover {
+    background-color: rgb(0, 255, 0);
+}
+
+#epic-things-btn, #dog-pog-btn {
+    border-radius: 4px;
+    width: 25vw;
+    margin: auto;
+    background-color: rgb(0, 0, 255);
+}
+
+#dog-pog:hover, #epic-things:hover {
+    color: rgb(0, 0, 255);
+}
+
+#dog-pog, #epic-things {
+    padding: -2px;
+    display: block;
+    line-height: 2rem;
+    width: 100%;
+    grid-row: 2/3;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(0, 255, 0);
+}
+
+#epic-things-btn {
+    grid-column: 1/2;
+}
+
+#dog-pog-btn {
+    grid-column: 2/2;
+}
+
+/* Dog Pog Styling */
+
+#dog-pog-title {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    line-height: 10px;
+}
+
+#main-area {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    border-radius: 20px;
+    display: grid;
+    width: 90vw;
+    height: 70vh;
+    margin: auto;
+    grid-template-rows: repeat(40, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+    background-color: rgb(0, 255, 255);
+}
+
+#instructions {
+    padding: 1vw;
+    border-radius: 1vw;
+    background-color: white;
+    grid-row: 2/3;
+    grid-column: 2/38;
+}
+
+#doggy-photo {
+    border-radius: 5px;
+    min-width: 100px;
+    min-width: 100px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#image-area {
+    grid-row: 3/38;
+    grid-column: 26/38;
+    display: block;
+}
+
+#text {
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    grid-row: 3/38;
+    grid-column: 2/25;
+}
+
+#word-count {
+    border-radius: 1vw;
+    border: 1px solid;
+    background-color: white;
+    grid-row: 39/40;
+    grid-column: 2/40;
+}
