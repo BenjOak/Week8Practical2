@@ -67,11 +67,11 @@ nav {
     border-radius: 1vw;
     background-color: white;
     grid-row: 2/3;
-    grid-column: 2/38;
+    grid-column: 2/40;
 }
 
 #doggy-photo {
-    border-radius: 5px;
+    border-radius: 0.5vw;
     min-width: 100px;
     min-width: 100px;
     width: 100%;
@@ -81,7 +81,7 @@ nav {
 
 #image-area {
     grid-row: 3/38;
-    grid-column: 26/38;
+    grid-column: 26/40;
     display: block;
 }
 
@@ -93,10 +93,23 @@ nav {
     grid-column: 2/25;
 }
 
-#word-count {
+#pre-100 {
+    grid-row: 30/40;
+    grid-column: 28/40
+}
+
+#word-count, #num {
+    display: flex;
     border-radius: 1vw;
-    border: 1px solid;
     background-color: white;
     grid-row: 39/40;
     grid-column: 2/40;
+}
+
+#count-down {
+    margin-left: 15vw;
+}
+
+#num {
+    margin-left: 5px
 }

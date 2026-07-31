@@ -1,27 +1,32 @@
 // const words = document.getElementsByClassName("writing-area");
 const addWord = document.getElementsByTagName("textarea");
 let wordCount = 0;
-const WORDS_PER_DOG = 10;
+let number = document.getElementById("num").innerHTML;
+
+const WORDS_PER_DOG = 100;
 
 for (let word of addWord) {
     word.addEventListener("keyup", function () {
         getWordArray();
-        console.log(getWordArray());
-        let wordCounter = (getWordArray().length - 1);
-        document.getElementById("update-count").innerHTML = `Word Count = ${wordCounter}`
+        getWordCount();
+        document.getElementById("num").innerHTML = wordCount;
+        console.log(wordCount);
+        findAPI();
     })
 }
 
 function getWordArray() {
-    const words = document.getElementById("text").value
-    return words.split(" ");
+    let words = document.getElementById("text").value
+    words = words.replace(/\s+/g,' '); // collapses consecutive spaces: from https://writtenkitten.co/ source code
+    return words.trim().split(" ");
 }
 
 function getWordCount() {
-    // let wordCount = getWordArray().length
+    return wordCount = (getWordArray().length - 1);
 }
 
 const doggyPhoto = document.getElementById("doggy-photo");
+
 //     document.getElementById("image-area").appendChild(document.createElement("p"));
 
 // for (let change of words) {
@@ -48,10 +53,15 @@ async function findAPI() {
         if (!fileType(data.url)) {
             findAPI();
         }
-        display(data.url);
+        let number = document.getElementById("num").innerHTML;
+        if (number > WORDS_PER_DOG) {
+            display(data.url);
+            document.getElementById("pre-100").style.display = "none";
+        }
     } catch (error) {
         document.getElementById("image-area").appendChild(document.createElement("p"));
         document.getElementById("image-area").lastChild.innerHTML = "Sorry, no doggies to show at the moment :(";
+        document.getElementById("pre-100").style.display = "none";
     }
 
 }
@@ -63,8 +73,4 @@ function display(data) {
     doggyPhoto.src = data;
 }
 
-// if (words > 100) {
-//     display();
-// }
-
-findAPI();
+// if (Math.floor(wordCount.length / WORDS_PER_DOG) > Math.floor())
