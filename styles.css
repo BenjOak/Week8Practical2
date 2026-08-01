@@ -1,27 +1,29 @@
+/* Styling for the navigation menu */
+
 nav {
     display: grid;
-    grid: 1fr 1fr 1fr/ 1fr 1fr;
+    grid: 1fr 1fr 1fr/ 1fr 1fr 1fr;
     background-color: rgb(0, 255, 255);
     border-bottom: 5px solid;
     border-bottom-color: rgb(0, 255, 0);
 }
 
-#epic-things-btn:hover, #dog-pog-btn:hover {
+#epic-things-btn:hover, #dog-pog-btn:hover, #dogedéx-btn:hover {
     background-color: rgb(0, 255, 0);
 }
 
-#epic-things-btn, #dog-pog-btn {
+#epic-things-btn, #dog-pog-btn, #dogédex-btn {
     border-radius: 4px;
     width: 25vw;
     margin: auto;
     background-color: rgb(0, 0, 255);
 }
 
-#dog-pog:hover, #epic-things:hover {
+#dog-pog:hover, #epic-things:hover, #dogédex:hover {
     color: rgb(0, 0, 255);
 }
 
-#dog-pog, #epic-things {
+#dog-pog, #epic-things, #dogédex {
     padding: -2px;
     display: block;
     line-height: 2rem;
@@ -33,12 +35,18 @@ nav {
 }
 
 #epic-things-btn {
-    grid-column: 1/2;
+    grid-column: 1/1;
 }
 
 #dog-pog-btn {
     grid-column: 2/2;
 }
+
+#dogédex-btn {
+    grid-column: 3/3;
+}
+
+
 
 /* Dog Pog Styling */
 
@@ -112,4 +120,18 @@ nav {
 
 #num {
     margin-left: 5px
+}
+
+
+
+
+/* Styling for the Dogédex! */
+
+#dog-table {
+    grid-template-rows: repeat(40, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+}
+
+.dog-profile {
+    grid: 1/1;
 }

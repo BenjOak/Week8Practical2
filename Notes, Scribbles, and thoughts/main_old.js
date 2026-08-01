@@ -2,13 +2,19 @@ const addWord = document.getElementsByTagName("textarea");
 let wordCount = 0;
 let number = document.getElementById("num").innerHTML;
 
-const WORDS_PER_DOG = 10;
+const WORDS_PER_DOG = 100;
 
-/**Changes the wordCount, updates the localStorage with the user's text, and calls the getWords() function every time a key is released */
+
 for (let word of addWord) {
+    word.addEventListener("load", function () {
+        getWordCount();
+    })
+
     word.addEventListener("keyup", function () {
-        getWords();
+        getWordArray();
+        getWordCount();
         document.getElementById("num").innerHTML = wordCount;
+        findAPI();
         localStorage.setItem("User Text", word.value);
     })
 }
@@ -17,31 +23,39 @@ for (let word of addWord) {
 if (localStorage.getItem("User Text") !== " ") {
     let savedText = localStorage.getItem("User Text");
     document.getElementById("text").value = savedText;
+    getWordCount();
 }
 
-function getWords() {
-    let words = document.getElementById("text").value;
-    words = words.replace(/\s+/g," ");
-    words = words.trim().split(" ");
-    if (Math.floor(words.length / WORDS_PER_DOG) > Math.floor(wordCount / WORDS_PER_DOG)) {
-        petThatDog();
-    }
-    wordCount = words.length;
-    document.getElementById("count-down").innerHTML = `Words until next dog = ${WORDS_PER_DOG - wordCount % WORDS_PER_DOG }`
+/**
+ * calling this function turns the string pulled from <textarea> into an array, which can then be used to calculate the word count
+ * 
+ * @return an array
+ */
+function getWordArray() {
+    let words = document.getElementById("text").value
+    words = words.replace(/\s+/g,' '); // collapses consecutive spaces: from https://writtenkitten.co/ source code
+    return words.trim().split(" ");
 }
 
+function getWordCount() {
+    if (getWordArray[0] === "") {
+        return wordCount = (getWordArray().length - 1);
+    } else return wordCount = (getWordArray().length);
+}
+
+const doggyPhoto = document.getElementById("doggy-photo");
 
 function fileType (src) {
     return src.endsWith(".jpg") || src.endsWith(".jpeg") || src.endsWith(".png") || src.endsWith(".gif");
 }
 
-async function petThatDog() {
+async function findAPI() {
     try {
         const result = await fetch("https://random.dog/woof.json");
         const data = await result.json();
 
         if (!fileType(data.url)) {
-            petThatDog();
+            findAPI();
         }
         let number = document.getElementById("num").innerHTML;
         if (number > WORDS_PER_DOG) {
@@ -55,9 +69,9 @@ async function petThatDog() {
     }
 }
 
-const doggyPhoto = document.getElementById("doggy-photo");
-
 function display(data) {
     // const parsed = JSON.parse(localStorage.getItem("Doggo"))
     doggyPhoto.src = data;
 }
+
+// if (Math.floor(wordCount.length / WORDS_PER_DOG) > Math.floor())
