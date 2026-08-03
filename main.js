@@ -2,7 +2,7 @@ const addWord = document.getElementsByTagName("textarea");
 let wordCount = 0;
 let number = document.getElementById("num").innerHTML;
 
-const WORDS_PER_DOG = 10;
+const WORDS_PER_DOG = 100;
 
 /**Changes the wordCount, updates the localStorage with the user's text, and calls the getWords() function every time a key is released */
 for (let word of addWord) {
@@ -44,7 +44,7 @@ async function petThatDog() {
             petThatDog();
         }
         let number = document.getElementById("num").innerHTML;
-        if (number > WORDS_PER_DOG) {
+        if (number > (WORDS_PER_DOG)-1) {
             display(data.url);
             document.getElementById("pre-100").style.display = "none";
         }

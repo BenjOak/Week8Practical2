@@ -127,11 +127,30 @@ nav {
 
 /* Styling for the Dogédex! */
 
+#dogédex-head {
+    text-align: center;
+    font-family: 'Comic Sans Ms';
+}
+
 #dog-table {
     grid-template-rows: repeat(40, 1fr);
     grid-template-columns: repeat(40, 1fr);
+    min-width: 250px;
+    width:80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
-.dog-profile {
-    grid: 1/1;
+.profile {
+    background-image: url(/assets/dexter-dawg.jpg);
+    background-color: rgb(0, 255, 255);
 }
+
+.profile:hover {
+    background-color: blue;
+    
+}
+
+/* .dog-profile {
+    grid: 1/1;
+} */
